@@ -6,8 +6,10 @@ import paginationView from './views/paginationView.js';
 import bookmarksView from './views/bookmarksView.js';
 import addRecipeView from './views/addRecipeView.js';
 
-import 'core-js/stable';
-import 'regenerator-runtime/runtime';
+// For support (compability) in old browser
+import 'regenerator-runtime/runtime'; // polyfiling async - await
+import 'core-js/stable'; // polyfilinf everything else
+
 import { MODAL_CLOSE_SEC } from './config.js';
 
 // https://forkify-api.herokuapp.com/v2
