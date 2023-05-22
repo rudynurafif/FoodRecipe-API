@@ -4,7 +4,7 @@ import View from './View';
 
 class ResultView extends View {
   _parentElement = document.querySelector('.results');
-  _errorMessage = `No recipe found for your query! Please try another one..`;
+  _errorMessage = `No recipe found for your query! Please try another word..`;
   _message = '';
 
   _generateMarkup() {
