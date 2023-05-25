@@ -24,7 +24,6 @@ import { MODAL_CLOSE_SEC } from './config.js';
 const controlRecipes = async function () {
   try {
     const id = window.location.hash.slice(1);
-    // console.log(id);
 
     if (!id) return;
     recipeViews.renderSpinner();
@@ -69,7 +68,7 @@ const controlSearchResults = async function () {
 };
 
 const controlPagination = function (goToPage) {
-  // 1) Render new results
+  // 1) Render NEW results
   resultsView.render(model.getSearchResultsPage(goToPage));
 
   // 2) Render NEW pagination buttons

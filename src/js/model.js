@@ -61,6 +61,7 @@ export const loadSearchResults = async function (query) {
         ...(rec.key && { key: rec.key }),
       };
     });
+
     state.search.page = 1;
   } catch (err) {
     console.error(`${err} 💥💥💥`);
@@ -71,8 +72,8 @@ export const loadSearchResults = async function (query) {
 export const getSearchResultsPage = function (page = state.search.page) {
   state.search.page = page;
 
-  const start = (page - 1) * state.search.resultsPerPage; // index 0
-  const end = page * state.search.resultsPerPage; // index 9
+  const start = (page - 1) * state.search.resultsPerPage;
+  const end = page * state.search.resultsPerPage;
 
   return state.search.results.slice(start, end);
 };
@@ -100,7 +101,7 @@ export const addBookmark = function (recipe) {
 };
 
 export const removeBookmark = function (id) {
-  // Delete bookmark
+  // Delete current recipe from bookmarks array
   const index = state.bookmarks.findIndex(el => el.id === id);
   state.bookmarks.splice(index, 1);
 
